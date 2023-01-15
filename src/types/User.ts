@@ -8,3 +8,7 @@ export interface IAuthDetails {
     login: (data: string) => Promise<void>;
     logout: () => void;
 }
+
+export interface ITeamDetails {
+  teamMembers: string
+}

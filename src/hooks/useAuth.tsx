@@ -1,3 +1,4 @@
+import React from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IAuthDetails } from '../types/User';

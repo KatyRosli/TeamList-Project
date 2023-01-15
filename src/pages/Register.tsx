@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { TeamList } from '../components/TeamList';
 
 export const RegisterPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -13,17 +14,19 @@ export const RegisterPage = () => {
     }
 
   return (
+    <main>
+    <TeamList />
     <form onSubmit={handleSubmit(handleRegistration)}>
     <h2>Register</h2>
     <h3>Team player - Be positive - Beat yesterday</h3>
     <p>Together we re-define the experience of online gaming through gamification and novel technical solutions.</p>
-    <input type='text' placeholder='Name' {...register('name', registerOptions.name )} />
+    <input type='text' placeholder='Name' id='name' {...register('name', registerOptions.name )} />
     {errors?.name && errors.name.message && 
       <small className='text-danger'>
         {errors?.name.message.toString()}
       </small>
     }
-    <input type='email' placeholder='Email' {...register('email', registerOptions.email)} />
+    <input type='email' placeholder='Email' id='email' {...register('email', registerOptions.email)} />
     {errors?.email && errors.email.message &&
       <small className='text-danger'>
         {errors.email.message.toString()}
@@ -35,5 +38,6 @@ export const RegisterPage = () => {
     </label>
     <button>I'm in, sign me up!</button>
     </form>
+    </main>
   )
 };
