@@ -7,14 +7,14 @@ export const ProtectedLayout = () => {
     const outlet = useOutlet();
 
     if(!user) {
-        return <Navigate to='/' />;
+        //return <Navigate to='/' />;
     }
 
     return  (
         <div>
             <nav>
-                <Link to='/deposit'>Deposit</Link>
-                <Link to='/livecasino'>LiveCasino</Link>
+                <Link to='/games/deposit'>Deposit</Link>
+                <Link to='/games/livecasino'>LiveCasino</Link>
             </nav>
             {outlet}
         </div>

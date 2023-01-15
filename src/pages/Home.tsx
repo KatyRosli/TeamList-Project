@@ -1,9 +1,8 @@
 import React from 'react';
 
 export const HomePage = () => (
-    <div>
+    <main>
       <h4>Hi welcome, this is the Home Page</h4>
-      <p>Login here</p>
-      <p>Register here</p>
-    </div>
+      <p>Please click in the nav bar on top to login or register.</p>
+    </main>
   );

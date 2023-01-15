@@ -1,5 +1,5 @@
 import http from '../http-common';
-import ITeam from '../types/Team';
+import { ITeam } from '../types/Team';
 
 export const getAll = () => {
     return http.get<ITeam>("/");

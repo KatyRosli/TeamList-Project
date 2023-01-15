@@ -8,6 +8,8 @@ import { ProtectedLayout } from './components/ProtectedLayout';
 import { HomeLayout } from './components/HomeLayout';
 import { AuthLayout } from './components/AuthLayout';
 import './styles.css';
+import { getAll } from './services/TeamService';
+import { ITeam } from './types/Team';
 
 const getUserData = (): Promise<string | null> =>
   new Promise((resolve) => 
@@ -17,21 +19,25 @@ const getUserData = (): Promise<string | null> =>
     }, 3000)
   );
 
+export interface TeamLoaderData {
+  data: ITeam
+}
+
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       element={<AuthLayout />}
-      loader={() => defer({ userPromise: getUserData()})}
+      //loader={() => defer({ userPromise: getUserData()})}
     >
       <Route element={<HomeLayout />}>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/register' element={<RegisterPage />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisterPage />} loader={async () => ({ data: (await getAll()).data })}/>
       </Route>
 
       <Route path='/games' element={<ProtectedLayout />}>
-        <Route path='deposit' element={<DepositPage />} />
-        <Route path='livecasino' element={<LiveCasinoPage />} />
+        <Route path='/games/deposit' element={<DepositPage />} />
+        <Route path='/games/livecasino' element={<LiveCasinoPage />} />
       </Route>
     </Route>
   )

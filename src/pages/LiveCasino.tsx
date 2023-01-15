@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const LiveCasinoPage = () => (
-    <div>
-      <h4>This is the Live Casino Page</h4>
-    </div>
+    <main>
+      <h4>After players have deposit the money, let's play! This is the Live Casino Page.</h4>
+    </main>
   );

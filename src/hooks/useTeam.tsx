@@ -1,24 +1,30 @@
 import React from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ITeamDetails } from '../types/User';
+import { ITeamDetails } from '../types/Team';
 import { useLocalStorage } from './useLocalStorage';
 const TeamContext = createContext({} as ITeamDetails);
 
 export const TeamProvider = ({ children }: any) => {
-    const [teamMembers, setTeamMembers] = useLocalStorage('user', null);
+    const [team, setTeam] = useLocalStorage('team', null);
     const navigate = useNavigate();
 
-    const signUp = async (data: string): Promise<void> => {
-        setTeamMembers(data);
-        navigate('/deposit');
+    const updateTeam = async (data: string[]): Promise<void> => {
+        setTeam({ team: data });
     };
+
+    const signUp = async (data: string[]): Promise<void> => {
+        updateTeam(data);
+        navigate('/deposit');
+    }
 
     const value: ITeamDetails = useMemo(
         () => ({
-            teamMembers
+            team: team,
+            updateTeam: updateTeam,
+            signUp: signUp
         }),
-        [teamMembers]
+        [team]
     );
     return <TeamContext.Provider value={value}>{children}</TeamContext.Provider>
 };

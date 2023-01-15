@@ -1,7 +1,9 @@
-export default interface ITeam {
+export interface ITeam {
     team: string[]
 }
 
-export default interface ITeamDetails {
-    team: string[]
+export interface ITeamDetails {
+    team: ITeam,
+    updateTeam: (data: string[]) => Promise<void>
+    signUp: (data: string[]) => Promise<void>
 }
