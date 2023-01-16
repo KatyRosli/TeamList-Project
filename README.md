@@ -10,7 +10,7 @@
 # Technologies that I used to build:
 - Language: TypeScript.
 - Framework: React Tsx.
-- Libraries: Axios, CORS, 
+- Libraries: Axios, CORS.
 - Styling: CSS, Flexbox.
 
 # Steps to run the app in the development mode:
