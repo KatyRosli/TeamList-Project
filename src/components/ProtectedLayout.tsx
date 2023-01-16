@@ -14,7 +14,7 @@ export const ProtectedLayout = () => {
         <nav className='navbar'>
             <ul className='navbar__container'>
                 <li className='navbar__links'><Link to='/games/deposit'>Deposit</Link></li>
-                <li className='navbar__links'><Link to='/games/livecasino'>LiveCasino</Link></li>
+                <li className='navbar__links'><Link to='/games/livecasino'>Live Casino</Link></li>
             </ul>
             {outlet}
         </nav>

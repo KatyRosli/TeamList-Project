@@ -3,6 +3,7 @@ import { createContext, useContext, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ITeamDetails } from '../types/Team';
 import { useLocalStorage } from './useLocalStorage';
+
 const TeamContext = createContext({} as ITeamDetails);
 
 export const TeamProvider = ({ children }: any) => {

@@ -28,15 +28,12 @@ body {
   justify-content: space-around;
 }
 
-ul, 
-li {
-  list-style: none;
-}
-
-.navbar__links {
+.navbar__links, 
+a {
   font-family: var(--font);
-  padding: 0, 16px, 0, 16px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
+  list-style: none;
+  text-decoration: none;
 }
 
 .teamList {
@@ -72,8 +69,8 @@ li {
 
 .register__form,
 .deposit__header {
-  padding-left: 40px;
-  padding-right: 584px;
+  padding-left: 48px;
+  padding-right: 576px;
 }
 
 .register__header,
@@ -142,4 +139,5 @@ li {
 .register__submit:hover {
   transition: all 1s ease-in-out;
   transform: scale(1.1);
+  cursor: pointer;
 }

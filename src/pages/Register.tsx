@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { TeamLoaderData } from '../App';
 import { TeamList } from '../components/TeamList';
-import '../styles.css';
 import { ITeam } from '../types/Team';
+import '../styles.css';
 
 export const RegisterPage = () => {
   const [ team, setTeam ] = useState<ITeam>({} as ITeam);
