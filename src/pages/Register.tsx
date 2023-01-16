@@ -34,7 +34,7 @@ export const RegisterPage = () => {
 
   return (
     <main className='register'>
-      <TeamList teamProp={ team.team } />
+      <TeamList teamProp={ team } page='register' />
       <form  className='register__form' onSubmit={handleSubmit(handleRegistration)}>
         <h2 className='register__header'>Register</h2>
         <h3 className='register__subheader'>Team player - Be positive - Beat yesterday</h3>

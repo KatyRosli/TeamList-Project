@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
 export const useLocalStorage = (keyName: string, defaultValue: object | string[] | boolean[] | number[] | null) => {
+    const [storedKeyName, setStoredKeyName] = useState<string>(keyName);
     const [storedValue, setStoredValue] = useState(() => {
+        setStoredKeyName(keyName);
         try {
             const value = window.localStorage.getItem(keyName);
             if (value) {
@@ -17,7 +19,7 @@ export const useLocalStorage = (keyName: string, defaultValue: object | string[]
     });
     const setValue = (newValue: object | string[] | boolean[] | number[] | null) => {
         try {
-            window.localStorage.setItem('value', JSON.stringify(newValue));
+            window.localStorage.setItem(storedKeyName, JSON.stringify(newValue));
         } catch (err) {}
         setStoredValue(newValue);
     };

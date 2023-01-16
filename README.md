@@ -2,15 +2,15 @@
 - This project is about fetching the name of the team members from a given API and following the design given.
 - Showcase all the team members from the team list to the register page.
 - In the register page, New User get to sign up.
-- Upon successfully registered, the name entered in the input field by the new User will be displayed in the team list.
+- Upon successfully registered, the name entered in the input field by the New User will be displayed in the team list.
 
 # System architecture:
 - ![screenshot](./src/images/system_architecture.jpg)
 
 # Technologies that I used to build:
 - Language: TypeScript.
-- Framework: React Tsx.
-- Libraries: Axios, CORS.
+- Framework: React Tsx, react-router-dom,.
+- Libraries: Axios.
 - Styling: CSS, Flexbox.
 
 # Steps to run the app in the development mode:

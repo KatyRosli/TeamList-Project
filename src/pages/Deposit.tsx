@@ -8,13 +8,12 @@ export const DepositPage = ( ) => {
   const { state } = useLocation();
 
   useEffect(() => {
-    console.log('Deposit state', state)
     setTeam(state)
   }, []);
 
   return (
     <main className='deposit'>
-      <TeamList teamProp={ team.team } />
+      <TeamList teamProp={ team } page='Deposit'/>
       <h4 className='deposit__header'>This is the Deposit Page</h4>
     </main>
   );
