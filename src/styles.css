@@ -19,6 +19,26 @@ body {
   margin: 0;
 }
 
+.navbar {
+  display: inline;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+ul, 
+li {
+  list-style: none;
+}
+
+.navbar__links {
+  font-family: var(--font);
+  padding: 0, 16px, 0, 16px;
+  color: var(--secondary-color);
+}
+
 .teamList {
   background-color: var(--primary-color);
   padding: 32px;
@@ -45,16 +65,19 @@ body {
   padding: 32px, 56px, 56px, 32px;
 }
 
-.register {
+.register,
+.deposit {
   display: flex;
 }
 
-.register__form {
+.register__form,
+.deposit__header {
   padding-left: 40px;
   padding-right: 584px;
 }
 
-.register__header {
+.register__header,
+.deposit__header {
   font-family: var(--font);
   color: var(--secondary-color);
   font-size: 32px;
@@ -114,4 +137,9 @@ body {
   padding-top: 8px;
   padding-bottom: 8px;
   margin-top: 24px;
+}
+
+.register__submit:hover {
+  transition: all 1s ease-in-out;
+  transform: scale(1.1);
 }

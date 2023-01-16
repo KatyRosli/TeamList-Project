@@ -13,9 +13,9 @@ export const DepositPage = ( ) => {
   }, []);
 
   return (
-    <div>
+    <main className='deposit'>
       <TeamList teamProp={ team.team } />
-      <h4>This is the Deposit Page</h4>
-    </div>
+      <h4 className='deposit__header'>This is the Deposit Page</h4>
+    </main>
   );
 }

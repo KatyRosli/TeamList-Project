@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Navigate, useOutlet } from 'react-router-dom';
+import { Link, useOutlet } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
 export const ProtectedLayout = () => {
@@ -11,12 +11,12 @@ export const ProtectedLayout = () => {
     }
 
     return  (
-        <div>
-            <nav>
-                <Link to='/games/deposit'>Deposit</Link>
-                <Link to='/games/livecasino'>LiveCasino</Link>
-            </nav>
+        <nav className='navbar'>
+            <ul className='navbar__container'>
+                <li className='navbar__links'><Link to='/games/deposit'>Deposit</Link></li>
+                <li className='navbar__links'><Link to='/games/livecasino'>LiveCasino</Link></li>
+            </ul>
             {outlet}
-        </div>
+        </nav>
     );
 };

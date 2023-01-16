@@ -10,13 +10,13 @@ export const HomeLayout = () => {
     }
 
     return (
-        <div>
-            <nav>
-                <Link to='/'>Home</Link>
-                <Link to='/login'>Login</Link>
-                <Link to='/register'>Register</Link>
-            </nav>
+        <nav className='navbar'>
+            <ul className='navbar__container'>
+                <li className='navbar__links'><Link to='/'>Home</Link></li>
+                <li className='navbar__links'><Link to='/login'>Login</Link></li>
+                <li className='navbar__links'><Link to='/register'>Register</Link></li>
+            </ul>
             <Outlet />
-        </div>
+        </nav>
     )
 };
