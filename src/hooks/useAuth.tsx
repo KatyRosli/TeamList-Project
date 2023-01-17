@@ -3,6 +3,7 @@ import { createContext, useContext, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IAuthDetails } from '../types/User';
 import { useLocalStorage } from './useLocalStorage';
+
 const AuthContext = createContext({} as IAuthDetails);
 
 export const AuthProvider = ({ children }: any) => {
