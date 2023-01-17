@@ -9,9 +9,9 @@ interface PropsTeam {
 }
 
 export const TeamList = ( props: PropsTeam ) => {
-    const { teamProp, page } = props;
+    const { teamProp } = props;
     const [ teamList, setValue ] = useLocalStorage('teamList', {} as ITeam);
-    const [ teamState, setTeam ] = useState<ITeam>({} as ITeam)
+    const [ teamState, setTeam ] = useState<ITeam>({} as ITeam);
     
     useEffect(() => {
         if (teamProp && Object.keys(teamProp).length !== 0) {
@@ -20,14 +20,6 @@ export const TeamList = ( props: PropsTeam ) => {
             setTeam(teamList)
         }
     }, [])
-    
-    useEffect(() => {
-        if (teamProp && Object.keys(teamProp).length !== 0) {
-            updateTeam(teamProp);
-        } else {
-            setTeam(teamList)
-        }
-    }, [teamProp])
 
     const updateTeam = (teamUpdated: ITeam) => {
         setTeam(teamUpdated);

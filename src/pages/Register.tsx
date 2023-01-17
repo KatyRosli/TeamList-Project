@@ -28,8 +28,8 @@ export const RegisterPage = () => {
   }
 
   const registerOptions = {
-    name: { required: '*Name is required'},
-    email: { required: '*Email is required'}
+    name: { required: '*Name is required' },
+    email: { required: '*Email is required' }
   }
 
   return (
@@ -56,7 +56,7 @@ export const RegisterPage = () => {
           }
           <br />
         <label className='register__checkbox'>
-          <input type='checkbox' className='register__checkbox__checked' defaultChecked/>
+          <input type='checkbox' className='register__checkbox__checked' defaultChecked />
           I agree to the terms
         </label>
         <br />
