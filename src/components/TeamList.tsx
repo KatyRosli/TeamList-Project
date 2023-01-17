@@ -29,7 +29,11 @@ export const TeamList = ( props: PropsTeam ) => {
     return (
         <section className='teamList' style={{ backgroundImage:`url(${image})` }}>
             <h1 className='teamList__header'>Join<br />the<br />team</h1>
-            <ul className='teamList__members'>{teamState && teamState.team && teamState.team?.map((member, index) => <li className='teamList__members__names' key={index}>{member}</li>)}</ul>
+            <ul className='teamList__members'>{teamState &&
+                teamState.team?.map(
+                    (member, index) => <li className='teamList__members__names' key={index}>{member}</li>
+                )}
+            </ul>
         </section>
     )
 };
