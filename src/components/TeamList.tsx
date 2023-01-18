@@ -14,16 +14,28 @@ export const TeamList = ( props: PropsTeam ) => {
     const [ teamState, setTeam ] = useState<ITeam>({} as ITeam);
     
     useEffect(() => {
+        handleShowTeam(teamProp, updateTeam, setTeam, teamList);
+    }, [])
+
+    useEffect(() => {
         if (teamProp && Object.keys(teamProp).length !== 0) {
             updateTeam(teamProp);
         } else {
             setTeam(teamList)
         }
-    }, [])
+    }, [teamProp])
 
     const updateTeam = (teamUpdated: ITeam) => {
         setTeam(teamUpdated);
         setValue(teamUpdated);
+    }
+
+    const handleShowTeam = (teamProp: ITeam | undefined, updateTeam: (teamUpdated: ITeam) => void, setTeam: React.Dispatch<React.SetStateAction<ITeam>>, teamList: any) => {
+        if (teamProp && Object.keys(teamProp).length !== 0) {
+            updateTeam(teamProp);
+        } else {
+            setTeam(teamList);
+        }
     }
 
     return (
