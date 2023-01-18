@@ -12,7 +12,7 @@ export const RegisterPage = () => {
   const { data } = useLoaderData() as TeamLoaderData;
 
   useEffect(() => {
-    setTeam(data); // data = { data: { team: [ 'Katy' ] as string[] } as ITeam} TeamLoaderData
+    setTeam(data);
   }, [])
 
   const { register, handleSubmit, formState: { errors } } = useForm({

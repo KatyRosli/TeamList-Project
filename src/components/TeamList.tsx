@@ -18,11 +18,7 @@ export const TeamList = ( props: PropsTeam ) => {
     }, [])
 
     useEffect(() => {
-        if (teamProp && Object.keys(teamProp).length !== 0) {
-            updateTeam(teamProp);
-        } else {
-            setTeam(teamList)
-        }
+        handleShowTeam(teamProp, updateTeam, setTeam, teamList);
     }, [teamProp])
 
     const updateTeam = (teamUpdated: ITeam) => {
